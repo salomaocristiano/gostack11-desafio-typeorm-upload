@@ -1,7 +1,7 @@
 ![header](https://raw.githubusercontent.com/salomaocristiano/gostack11-desafio-typeorm-upload/master/assets/header-desafios.png)
 
 <h3 align="center">
-  Desafio 05: Primeiro projeto Node.js
+  Desafio 06: Banco de dados e upload de arquivos no Node.js
 </h3>
 
 <p align="center">
