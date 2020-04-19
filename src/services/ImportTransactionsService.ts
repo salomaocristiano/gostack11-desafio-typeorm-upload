@@ -15,6 +15,10 @@ interface Request {
 
 class ImportTransactionsService {
   async execute({ csvFilename }: Request): Promise<Transaction[]> {
+    const createTransaction = new CreateTransactionService();
+
+    const transactions: Transaction[] = [];
+
     const csvFilePath = path.join(uploadConfig.directory, csvFilename);
 
     const checkExtension = path.extname(csvFilePath);
@@ -25,10 +29,6 @@ class ImportTransactionsService {
     }
 
     const transactionsCsv = await csv().fromFile(csvFilePath);
-
-    const createTransaction = new CreateTransactionService();
-
-    const transactions: Transaction[] = [];
 
     // eslint-disable-next-line no-restricted-syntax
     for (const transactionCsv of transactionsCsv) {
