@@ -33,6 +33,12 @@
 
 </p>
 
+<p align="center">
+
+![image-example](https://raw.githubusercontent.com/salomaocristiano/gostack11-desafio-typeorm-upload/master/assets/test.jpg)
+
+</p>
+
 ## :rocket: Sobre o desafio
 
 Aaplicação que deve armazenar transações financeiras de entrada e saída e permitir o cadastro e a listagem dessas transações, além de permitir a geração de relatórios a partir do envio de um arquivo csv.

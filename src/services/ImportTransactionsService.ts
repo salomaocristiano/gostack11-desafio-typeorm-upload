@@ -47,34 +47,10 @@ class ImportTransactionsService {
         category,
       });
 
-      // eslint-disable-next-line no-await-in-loop
-      const categoryList = await categoriesRepository.findOne({
-        where: { title: category },
-      });
-
-      if (categoryList) {
-        const categoryExists = categories.find(item => {
-          return item.id === categoryList.id;
-        });
-        if (!categoryExists) {
-          categories.push(categoryList);
-        }
-      }
-
       transactions.push(transaction);
     }
 
     await fs.promises.unlink(csvFilePath);
-
-    transactions.map(item => {
-      const categoryFind = categories.find(category => {
-        return category.id === item.category_id;
-      });
-      if (categoryFind) {
-        item.category = categoryFind;
-      }
-      return item;
-    });
 
     return transactions;
   }
